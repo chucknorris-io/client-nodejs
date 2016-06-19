@@ -1,0 +1,30 @@
+{
+    "name": "chucknorris-client",
+    "version": "1.0.0",
+    "description": "chucknorris.io API client library for node.js",
+    "main": "./lib/chuck.js",
+    "scripts": {
+        "test": "./node_modules/.bin/mocha --reporter spec"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/chucknorris-io/chuck-client-nodejs.git"
+    },
+    "keywords": [
+        "chuck norris",
+        "chuck norris facts",
+        "joke api"
+    ],
+    "author": "Mathias Schilling <m@matchilling.com>",
+    "license": "GPL-3.0",
+    "bugs": {
+        "url": "https://github.com/chucknorris-io/chuck-client-nodejs/issues"
+    },
+    "homepage": "https://api.chucknorris.io",
+    "dependencies": {
+        "request": "^2.72.0"
+    },
+    "devDependencies": {
+        "mocha": "^2.5.3"
+    }
+}
