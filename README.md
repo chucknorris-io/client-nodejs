@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/chucknorris-io/chuck-client-nodejs.svg?branch=master)](https://travis-ci.org/chucknorris-io/chuck-client-nodejs)
+[![Build Status](https://travis-ci.org/chucknorris-io/client-nodejs.svg?branch=master)](https://travis-ci.org/chucknorris-io/client-nodejs)
 
 # Official chucknorris.io api client for node.js
 

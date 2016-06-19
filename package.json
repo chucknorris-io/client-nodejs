@@ -8,7 +8,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+ssh://git@github.com/chucknorris-io/chuck-client-nodejs.git"
+        "url": "git+ssh://git@github.com/chucknorris-io/client-nodejs.git"
     },
     "keywords": [
         "chuck norris",
@@ -18,7 +18,7 @@
     "author": "Mathias Schilling <m@matchilling.com>",
     "license": "GPL-3.0",
     "bugs": {
-        "url": "https://github.com/chucknorris-io/chuck-client-nodejs/issues"
+        "url": "https://github.com/chucknorris-io/client-nodejs/issues"
     },
     "homepage": "https://api.chucknorris.io",
     "dependencies": {
