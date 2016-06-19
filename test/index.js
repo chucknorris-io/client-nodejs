@@ -3,7 +3,6 @@
 var assert = require('assert');
 var Chuck = require('../lib/chuck');
 var Joke = require('../lib/chuck/joke');
-var nock = require('nock');
 
 describe('Chuck', function() {
 
@@ -29,5 +28,5 @@ describe('Chuck', function() {
             });
         });
     });
-    
+
 });
