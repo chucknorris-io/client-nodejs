@@ -1,4 +1,4 @@
-# chucknorris.io client for node.js
+# Official chucknorris.io api client for node.js
 
 [chucknorris.io](https://api.chucknorris.io) is a free JSON API for hand curated Chuck Norris facts.
 
@@ -13,12 +13,12 @@ beard, and his role in the action television series Walker, Texas Ranger.
 
 ## Installation
 
-`npm install chucknorris-client`
+`npm install chucknorris-io`
 
 ## Usage
 
 ```javascript
-var Chuck = require('chucknorris-client');
+var Chuck = require('chucknorris-io');
 
 var client = new Chuck();
 
