@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/chucknorris-io/chuck-client-nodejs.svg?branch=master)](https://travis-ci.org/chucknorris-io/chuck-client-nodejs)
+
 # Official chucknorris.io api client for node.js
 
 [chucknorris.io](https://api.chucknorris.io) is a free JSON API for hand curated Chuck Norris facts.

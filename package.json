@@ -4,7 +4,7 @@
     "description": "chucknorris.io API client library for node.js",
     "main": "./lib/chuck.js",
     "scripts": {
-        "test": "./node_modules/.bin/mocha --reporter spec"
+        "test": "./node_modules/.bin/mocha test/*"
     },
     "repository": {
         "type": "git",
