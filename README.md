@@ -20,15 +20,14 @@ beard, and his role in the action television series Walker, Texas Ranger.
 ## Usage
 
 ```javascript
-var Chuck = require('chucknorris-io');
+const Chuck  = require('chucknorris-io'),
+      client = new Chuck();
 
-var client = new Chuck();
-
-client.getRandomJoke(function(error, joke) {
-  if (!error) {
-    console.log(joke);
-  }
-});
+client.getRandomJoke().then(function (response) {
+    // to stuff here
+}).catch(function (err) {
+    // handle error
+})
 ```
 
 ## License
