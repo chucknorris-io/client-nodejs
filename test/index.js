@@ -21,10 +21,12 @@ describe('Chuck', function() {
     });
 
     describe('getRandomJoke', function() {
-        it('Should return a random joke from the api', function() {
+        it('Should return a random joke from the api', function(done) {
             var client = new Chuck();
             var response = client.getRandomJoke(function(error, response) {
                 assert(response instanceof Joke);
+
+                done();
             });
         });
     });
