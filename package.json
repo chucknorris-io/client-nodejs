@@ -1,6 +1,6 @@
 {
     "name": "chucknorris-io",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "chucknorris.io api client library for node.js returning promises.",
     "main": "./src/Client.js",
     "scripts": {
