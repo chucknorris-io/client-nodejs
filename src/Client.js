@@ -76,6 +76,25 @@ Chuck.prototype.getClientVersion = function() {
 };
 
 /**
+ * Retrieve a list of available categories
+ * @return {Promise}
+ */
+Chuck.prototype.getJokeCategories = function(category) {
+    const response = this._request('get', 'jokes/categories', null, {
+        'accept'     : 'application/json',
+        'user-agent' : util.format('chucknorris-io/client-nodejs#v%s', pkg.version)
+    });
+
+    return new Promise(function(resolve, reject) {
+        response.then(function(response) {
+            resolve(
+                JSON.parse(response.body)
+            );
+        }).catch(reject);
+    });
+};
+
+/**
  * Retrieve a random chuck joke
  * @param  {String} category
  * @return {Promise}

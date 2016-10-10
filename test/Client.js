@@ -22,6 +22,18 @@ describe(util.format('%s/Client', pkg.name), function () {
         });
     });
 
+    describe('#getJokeCategories', function() {
+        it('Should return a list of available categories', function(done) {
+            const client   = new Chuck(),
+                  response = client.getJokeCategories();
+
+            response.then(function (response) {
+                assert.isArray(response);
+                done();
+            });
+        });
+    });
+
     describe('#getRandomJoke', function() {
         it('Should return a random joke', function(done) {
             const client   = new Chuck(),

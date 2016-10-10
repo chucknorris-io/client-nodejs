@@ -36,6 +36,13 @@ client.getRandomJoke('dev').then(function (response) {
 }).catch(function (err) {
     // handle error
 });
+
+// Retrieve a list of available joke categories
+client.getJokeCategories().then(function (response) {
+    // to stuff here
+}).catch(function (err) {
+    // handle error
+});
 ```
 
 ## License
