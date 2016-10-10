@@ -3,20 +3,30 @@
 /**
  *
  * @constructor
- * @param {String} id
- * @param {String} value
- * @param {String} sourceUrl
+ * @param {Array}  categories
  * @param {String} iconUrl
+ * @param {String} id
+ * @param {String} sourceUrl
+ * @param {String} value
  */
-function Joke(id, value, sourceUrl, iconUrl) {
+function Joke(categories, iconUrl, id, sourceUrl, value) {
     if (! (this instanceof Joke)) {
         return new Joke()
     }
 
-    this.id        = id;
-    this.value     = value;
-    this.sourceUrl = sourceUrl;
-    this.iconUrl   = iconUrl;
+    this.categories = categories ? categories : [];
+    this.iconUrl    = iconUrl ? iconUrl: null;
+    this.id         = id ? id : null;
+    this.sourceUrl  = sourceUrl ? sourceUrl : null;
+    this.value      = value ? value : null;
+}
+
+/**
+ * Get joke categories
+ * @return {Array}
+ */
+Joke.prototype.getCategories = function() {
+    return this.categories;
 }
 
 /**

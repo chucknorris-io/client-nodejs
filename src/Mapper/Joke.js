@@ -35,10 +35,5 @@ JokeMapper.fromJson = function(jsonString) {
 
     const data = JSON.parse(jsonString);
 
-    return new Joke(
-        data.id,
-        data.value,
-        data.url,
-        data.icon_url
-    );
+    return new Joke(data.category, data.icon_url, data.id, data.url, data.value);
 };

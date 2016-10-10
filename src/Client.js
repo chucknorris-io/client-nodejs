@@ -77,12 +77,19 @@ Chuck.prototype.getClientVersion = function() {
 
 /**
  * Retrieve a random chuck joke
+ * @param  {String} category
  * @return {Promise}
  */
-Chuck.prototype.getRandomJoke = function() {
-    const response = this._request('get', 'jokes/random', null, {
-        'accept'       : 'application/json',
-        'user-agent'   : util.format('chucknorris-io/client-nodejs#v%s', pkg.version)
+Chuck.prototype.getRandomJoke = function(category) {
+    const query = {};
+
+    if (category) {
+        query.category = category;
+    }
+
+    const response = this._request('get', 'jokes/random', query, {
+        'accept'     : 'application/json',
+        'user-agent' : util.format('chucknorris-io/client-nodejs#v%s', pkg.version)
     });
 
     return new Promise(function(resolve, reject) {

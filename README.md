@@ -23,11 +23,19 @@ beard, and his role in the action television series Walker, Texas Ranger.
 const Chuck  = require('chucknorris-io'),
       client = new Chuck();
 
+// Retrieve a random chuck joke
 client.getRandomJoke().then(function (response) {
     // to stuff here
 }).catch(function (err) {
     // handle error
-})
+});
+
+// Retrieve a random chuck joke from the given category
+client.getRandomJoke('dev').then(function (response) {
+    // to stuff here
+}).catch(function (err) {
+    // handle error
+});
 ```
 
 ## License

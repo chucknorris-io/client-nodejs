@@ -30,9 +30,17 @@ describe(util.format('%s/Client', pkg.name), function () {
             response.then(function (response) {
                 assert.instanceOf(response, Joke);
                 done();
-            }).catch(function (err) {
+            });
+        });
+
+        it('Should return a random joke from the given category', function(done) {
+            const client   = new Chuck(),
+                  response = client.getRandomJoke('dev');
+
+            response.then(function (response) {
+                assert.isTrue(-1 !== response.getCategories().indexOf('dev'));
                 done();
-            })
+            });
         });
     });
 
