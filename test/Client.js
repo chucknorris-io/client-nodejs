@@ -1,10 +1,11 @@
 'use strict';
 
-const assert = require('chai').assert,
-      Chuck  = require('../src/Client'),
-      Joke   = require('../src/Entity/Joke'),
-      pkg    = require('../package.json'),
-      util   = require('util');
+const assert         = require('chai').assert,
+      Chuck          = require('../src/Client'),
+      Joke           = require('../src/Entity/Joke'),
+      JokeCollection = require('../src/Entity/JokeCollection'),
+      pkg            = require('../package.json'),
+      util           = require('util');
 
 describe(util.format('%s/Client', pkg.name), function () {
 
@@ -51,6 +52,18 @@ describe(util.format('%s/Client', pkg.name), function () {
 
             response.then(function (response) {
                 assert.isTrue(-1 !== response.getCategories().indexOf('dev'));
+                done();
+            });
+        });
+    });
+
+    describe('#search', function() {
+        it('Should return a collection of joke', function(done) {
+            const client   = new Chuck(),
+                  response = client.search('Charlie Sheen');
+
+            response.then(function (response) {
+                assert.instanceOf(response, JokeCollection);
                 done();
             });
         });

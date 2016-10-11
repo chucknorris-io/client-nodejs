@@ -1,12 +1,14 @@
 'use strict';
 
-const https       = require('https'),
-      Joke        = require('./Entity/Joke'),
-      JokeMapper  = require('./Mapper/Joke'),
-      pkg         = require('../package.json'),
-      querystring = require('querystring'),
-      url         = require('url'),
-      util        = require('util');
+const https                = require('https'),
+      Joke                 = require('./Entity/Joke'),
+      JokeCollection       = require('./Entity/JokeCollection'),
+      JokeMapper           = require('./Mapper/Joke'),
+      JokeCollectionMapper = require('./Mapper/JokeCollection'),
+      pkg                  = require('../package.json'),
+      querystring          = require('querystring'),
+      url                  = require('url'),
+      util                 = require('util');
 
 /**
  * Create a new chuck instance
@@ -113,6 +115,26 @@ Chuck.prototype.getRandomJoke = function(category) {
 
     return new Promise(function(resolve, reject) {
         response.then(JokeMapper.fromApiResponse).then(resolve).catch(reject);
+    });
+};
+
+/**
+ * Free text search
+ * @param  {String} searchTerm
+ * @return {Promise}
+ */
+Chuck.prototype.search = function(searchTerm) {
+    const query = {
+        query : searchTerm
+    };
+
+    const response = this._request('get', 'jokes/search', query, {
+        'accept'     : 'application/json',
+        'user-agent' : util.format('chucknorris-io/client-nodejs#v%s', pkg.version)
+    });
+
+    return new Promise(function(resolve, reject) {
+        response.then(JokeCollectionMapper.fromApiResponse).then(resolve).catch(reject);
     });
 };
 
