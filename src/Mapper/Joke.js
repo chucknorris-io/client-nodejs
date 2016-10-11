@@ -23,17 +23,26 @@ JokeMapper.fromApiResponse = function(response) {
 };
 
 /**
- * Create an instance of Joke from a json string
- * @param  {String} jsonString
+ * Create an instance of Joke from json string or object
+ * @param  {Object|String} json
  * @throws {TypeError}
  * @return {Joke}
  */
-JokeMapper.fromJson = function(jsonString) {
-    if ('string' !== typeof jsonString) {
-        throw new TypeError('Property "body" must be of type string.');
-    }
+JokeMapper.fromJson = function(json) {
+    let data;
 
-    const data = JSON.parse(jsonString);
+    switch (typeof json) {
+        case 'object':
+            data = json;
+            break;
+
+        case 'string':
+            data = JSON.parse(json);
+            break;
+
+        default:
+            throw new TypeError('Argument "json" must be of type string or object.');
+    }
 
     return new Joke(data.category, data.icon_url, data.id, data.url, data.value);
 };
