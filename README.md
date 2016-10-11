@@ -43,6 +43,13 @@ client.getJokeCategories().then(function (response) {
 }).catch(function (err) {
     // handle error
 });
+
+// Free text search
+client.search(searchTerm).then(function (response) {
+    // to stuff here
+}).catch(function (err) {
+    // handle error
+});
 ```
 
 ## License
